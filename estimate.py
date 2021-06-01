@@ -31,25 +31,25 @@ class TestMC(unittest.TestCase):
     
 
      
-def wallis(n):
-    x=2
-    for k in range(1,n+1):
+    def wallis(n):
+        x=2
+        for k in range(1,n+1):
         x*=(4*k*k)/((4*k*k)-1)
         
-    return x
+        return x
 
-def monte_carlo(n):
-    ps=0
-    pc=0
-    for k in range(0,n):
-        x=random.random()
-        y=random.random()
-        ps+=1
-        if ((x*x)+(y*y))<=1:
-            pc+=1
+    def monte_carlo(n):
+        ps=0
+        pc=0
+        for k in range(0,n):
+            x=random.random()
+            y=random.random()
+            ps+=1
+            if ((x*x)+(y*y))<=1:
+                pc+=1
 
-    return 4*(pc)/(ps)
+        return 4*(pc)/(ps)
             
           
-if _name_ == "_main_":
-    unittest.main()
+    if _name_ == "_main_":
+        unittest.main()
